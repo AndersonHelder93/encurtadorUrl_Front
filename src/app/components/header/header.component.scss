@@ -1,0 +1,58 @@
+@import '../../../styles/tema.scss';
+
+@media only screen and (max-width: 1024px) {
+  header {
+    padding: 0 6rem !important;
+  }
+}
+@media only screen and (max-width: 720px) {
+  header {
+    padding: 0 2rem !important;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 5rem;
+  padding: 0 12rem;
+
+  background-color: $cor-principal;
+  color: white;
+
+  & > div > h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 14rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 1.2rem;
+
+      &.btn-entrar {
+
+        width: 5rem;
+        height: 2.2rem;
+        padding: .4rem .1rem;
+
+        border-radius: .4rem;
+
+        background-color: $cor-secundaria;
+
+        &:hover { backdrop-filter: brightness(20%); }
+      }
+    }
+  }
+}

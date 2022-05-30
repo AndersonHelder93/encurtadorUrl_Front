@@ -1,0 +1,111 @@
+<main>
+  <section id="login">      <!-- Login -->
+    <form (ngSubmit)="fazerLogin()" #formLogin="ngForm">
+      <h2>Login</h2>
+
+      <div class="form-field">
+        <label for="login-user">Usuário</label>
+        <input
+          type="text"
+          [(ngModel)]="login.login"
+          name="login-user"
+          id="login-user"
+          #campoLoginLogin="ngModel"
+          required>
+        <app-mensagem
+          *ngIf="campoLoginLogin.invalid && campoLoginLogin.touched"
+          mensagem="Preencha o usuário"></app-mensagem>
+      </div>
+
+      <div class="form-field">
+        <label for="login-senha">Senha</label>
+        <input
+          type="password"
+          [(ngModel)]="login.password"
+          name="login-senha"
+          id="login-senha"
+          #campoLoginSenha="ngModel"
+          required>
+        <app-mensagem
+          *ngIf="campoLoginSenha.invalid && campoLoginSenha.touched"
+          mensagem="Preencha a senha"></app-mensagem>
+      </div>
+
+      <div class="submit">
+        <app-mensagem
+          *ngIf="erroLogin"
+          mensagem="Preencha todos os campos obrigatórios"></app-mensagem>
+        <button
+          type="submit"
+          class="btn-submit"
+          [disabled]="formLogin.invalid">
+          Entrar
+        </button>
+      </div>
+
+    </form>
+  </section>                <!-- Login -->
+
+  <section id="cadastro">   <!-- Cadastro-->
+    <form (ngSubmit)="fazerCadastro()" #formCadastro="ngForm">
+      <h2>Cadastro</h2>
+
+      <div class="form-field">
+        <label for="cadastro-user">Usuário</label>
+        <input
+          type="text"
+          [(ngModel)]="cadastro.login"
+          name="cadastro-user"
+          id="cadastro-user"
+          #campoCadastroLogin="ngModel"
+          required>
+        <app-mensagem
+          *ngIf="campoCadastroLogin.invalid && campoCadastroLogin.touched"
+          mensagem="Preencha o usuário">
+        </app-mensagem>
+      </div>
+
+      <div class="form-field">
+        <label for="cadastro-senha">Senha</label>
+        <input
+          type="password"
+          [(ngModel)]="cadastro.password"
+          name="cadastro-senha"
+          id="cadastro-senha"
+          #campoCadastroSenha="ngModel"
+          required>
+        <app-mensagem
+          *ngIf="campoCadastroSenha.invalid && campoCadastroSenha.touched"
+          mensagem="Preencha a senha">
+        </app-mensagem>
+      </div>
+
+      <div class="form-field">
+        <label for="cadastro-repetir-senha">Confirme a Senha</label>
+        <input
+          type="password"
+          [(ngModel)]="cadastro.password2"
+          name="cadastro-repetir-senha"
+          id="cadastro-repetir-senha"
+          #campoCadastroSenha2="ngModel"
+          required>
+        <app-mensagem
+          *ngIf="campoCadastroSenha2.invalid && campoCadastroSenha2.touched"
+          mensagem="Repita a senha">
+        </app-mensagem>
+      </div>
+
+      <div class="submit">
+        <app-mensagem
+          *ngIf="erroCadastro"
+          mensagem="Preencha todos os campos obrigatórios"></app-mensagem>
+        <button
+          type="submit"
+          class="btn-submit"
+          [disabled]="formCadastro.invalid">
+          Cadastrar
+        </button>
+      </div>
+    </form>
+  </section>                    <!-- Cadastro -->
+</main>

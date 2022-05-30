@@ -1,0 +1,30 @@
+<main>
+  <article>
+    <form #formEncurtar="ngForm" (ngSubmit)="encurtarUrl()">
+      <div class="form-field">
+        <label for="url-completa">URL para Encurtar</label>
+        <input
+          type="url"
+          name="url-completa"
+          [(ngModel)]="url"
+          id="url-completa"
+          #campoUrl="ngModel"
+          required
+          >
+        <app-mensagem
+          *ngIf="campoUrl.invalid && campoUrl.touched"
+          mensagem="Preencha a URL"
+        ></app-mensagem>
+      </div>
+
+      <div class="submit">
+        <button
+          type="submit"
+          class="btn-submit"
+          [disabled]="formEncurtar.invalid">
+          Encurtar
+        </button>
+      </div>
+    </form>
+  </article>
+</main>
